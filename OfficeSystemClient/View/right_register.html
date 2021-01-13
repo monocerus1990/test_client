@@ -1,0 +1,67 @@
+<div class="myCanvasNav_register canvi-navbar" style="padding-top: 80px;padding-left: 30px;padding-right: 30px;">
+    <div class="form-group">
+        <label>Account</label><br/>
+        <input id="register_account" class="form-control"/>
+    </div>
+    <div class="form-group">
+        <label>Name</label><br/>
+        <input id="register_name" class="form-control"/>
+    </div>
+    <div class="form-group">
+        <label>Password</label><br/>
+        <input id="register_password" class="form-control"/>
+    </div>
+    <div class="form-group">
+        <label>RePassword</label><br/>
+        <input id="register_repassword" class="form-control"/>
+    </div>
+    <div class="form-group">
+        <label>Department</label><br/>
+        <select id="register_department" class="form-control"></select>
+    </div>
+    <div class="form-group">
+        <label>Position</label><br/>
+        <select id="register_position" class="form-control"></select>
+    </div>
+    <div class="form-group">
+        <label>Status</label><br/>
+        <select class="form-control" id="register_status">
+            <option value="1">In Service</option>
+            <option value="3">Internship</option>
+        </select>
+    </div>
+    <!--<div class="form-group">
+        <label>Date</label><br/>
+    </div>-->
+    <div class="form-group">
+        <button onclick = "addNewEmployee(document.getElementById('register_account').value,
+                        document.getElementById('register_name').value,
+                        document.getElementById('register_password').value,
+                        document.getElementById('register_department').value,
+                        document.getElementById('register_position').value,
+                        document.getElementById('register_status').value, '')">Add New Employee</button>
+    </div>
+</div>
+
+<script>
+    var t1 = new Canvi({
+        content: ".js-canvi-content",
+        isDebug: !1,
+        navbar: ".myCanvasNav_register",
+        openButton: ".js-canvi-open-button--left_register",
+        position: "right",
+        pushContent: !1,
+        speed: "0.2s",
+        width: "100vw",
+        responsiveWidths: [{
+                breakpoint: "600px",
+                width: "280px"
+            }, {
+                breakpoint: "1280px",
+                width: "320px"
+            }, {
+                breakpoint: "1600px",
+                width: "400px"
+            }]
+    });
+</script>

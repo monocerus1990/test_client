@@ -1,0 +1,37 @@
+<link href="../CSS/Vaction.css" rel="stylesheet">
+<link rel="stylesheet" href="//brick.a.ssl.fastly.net/Roboto:400"/>
+<div class="myCanvasNav_vacation canvi-navbar" style="padding-top: 80px;padding-left: 30px;padding-right: 30px;" id="right_employee_vacation">
+
+</div>
+
+<script>
+    var t1 = new Canvi({
+        content: ".js-canvi-content",
+        isDebug: !1,
+        navbar: ".myCanvasNav_vacation",
+        openButton: ".js-canvi-open-button--left_vacation",
+        position: "right",
+        pushContent: !1,
+        speed: "0.2s",
+        width: "100vw",
+        responsiveWidths: [{
+                breakpoint: "600px",
+                width: "280px"
+            }, {
+                breakpoint: "1280px",
+                width: "320px"
+            }, {
+                breakpoint: "1600px",
+                width: "500px"
+            }]
+    });
+
+    var $button = document.querySelector('.button_approve');
+    $button.addEventListener('click', function () {
+        var duration = 0.3,
+                delay = 0.08;
+        TweenMax.to($button, duration, {scaleY: 1.6, ease: Expo.easeOut});
+        TweenMax.to($button, duration, {scaleX: 1.2, scaleY: 1, ease: Back.easeOut, easeParams: [3], delay: delay});
+        TweenMax.to($button, duration * 1.25, {scaleX: 1, scaleY: 1, ease: Back.easeOut, easeParams: [6], delay: delay * 3});
+    });
+</script>

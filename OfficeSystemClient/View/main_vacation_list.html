@@ -1,0 +1,78 @@
+<ul class="nav nav-tabs">
+    <li class="active" onclick="displayVacation()" id="li_vacation"><a href="#">All Vacation</a></li>
+    <li onclick="displayOnHoliday()" id="li_on_holiday"><a href="#">On Holiday</a></li>
+</ul>
+<div class="table-responsive" id="div_main_vacation">
+    <table class="table table-striped table-hover" >
+        <thead>
+            <tr>
+                <th>#</th>
+                <th>Empoylee Name</th>
+                <th>Limit</th>
+                <th>Remaining holidays</th>
+                <th>Unapproved quantity</th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody class="js-canvi-open-button--left_vacation" id="vacation_tbody">
+
+
+        </tbody>
+    </table>
+</div>
+<div class="table-responsive" id="div_on_vacation" hidden>
+    <table class="table table-striped table-hover"  id="tab">
+        <thead>
+            <tr>
+                <th>#</th>
+                <th>Empoylee Name</th>
+                <th>Department</th>
+                <th>Position</th>
+                <th>Status</th>
+            </tr>
+        </thead>
+        <tbody class="js-canvi-open-button--left" id="vacation_on_holiday_tbody">
+        </tbody>
+    </table>
+
+</div>
+
+<script>
+    function displayVacation() {
+        document.getElementById("div_main_vacation").hidden = false;
+        document.getElementById("div_on_vacation").hidden = true;
+        $('#li_vacation').addClass("active");
+        $('#li_on_holiday').removeClass("active");
+    }
+    function displayOnHoliday() {
+        document.getElementById("div_main_vacation").hidden = true;
+        document.getElementById("div_on_vacation").hidden = false;
+        $('#li_on_holiday').addClass("active");
+        $('#li_vacation').removeClass("active");
+
+        var test_ligt = JSON.parse(sessionStorage.getItem("all_employees"));
+        //按照状态（假期中 status: 4）过滤employees
+        var employeeList = test_ligt.filter(employee => employee.status == 4);
+
+        for (i = 0; i < employeeList.length; i++) {
+            var employee_id = employeeList[i].employee_id;
+            var employee_name = employeeList[i].employee_name;
+            var department = employeeList[i].department_name;
+            var position = employeeList[i].position_name;
+            var status = employeeList[i].status;
+            var status_text = "";
+            if (status == 1) {
+                status_text = "In Service";
+            } else if (status == 2) {
+                status_text = "Resignation";
+            } else if (status == 3) {
+                status_text = "Internship";
+            } else {
+                status_text = "On Holiday";
+            }
+            $str = "<tr onclick=\"employeeDetails(" + i + ")\"><td>" + employee_id + "</td><td>" + employee_name + "</td><td>" + department + "</td><td>" + position + "</td><td>" + status_text + "</td></tr>";
+            $("#vacation_on_holiday_tbody").empty();
+            $("#vacation_on_holiday_tbody").append($str);
+        }
+    }
+</script>

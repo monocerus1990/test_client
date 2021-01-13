@@ -1,0 +1,73 @@
+<div class="myCanvasNav canvi-navbar" style="padding-top: 80px;padding-left: 30px;padding-right: 30px;">
+    <input id="employee_details_id" hidden/>
+    <div class="form-group">
+        <label>Account</label><br/>
+        <input id="employee_details_account" readonly class="form-control"/>
+    </div>
+    <div class="form-group">
+        <label>Name</label><br/>
+        <input id="employee_details_name" readonly class="form-control"/>
+    </div>
+    <div class="form-group">
+        <label>Gender</label><br/>
+        <input id="employee_details_gender" readonly class="form-control"/>
+    </div>
+    <div class="form-group">
+        <label>Email</label><br/>
+        <input id="employee_details_email" readonly class="form-control"/>
+    </div>
+    <div class="form-group">
+        <label>Address</label><br/>
+        <input id="employee_details_address" readonly class="form-control"/>
+    </div>
+    <div class="form-group">
+        <label>Department</label><br/>
+        <select id="employee_details_department" class="form-control"></select>
+    </div>
+    <div class="form-group">
+        <label>Position</label><br/>
+        <select id="employee_details_position" class="form-control"></select>
+    </div>
+    <div class="form-group">
+        <label>Status</label><br/>
+        <select class="form-control" id="employee_details_status">
+            <option value="1">In Service</option>
+            <option value="2">Resignation</option>
+            <option value="3">Internship</option>
+            <option value="4">On Holiday</option>
+        </select>
+    </div>
+
+    <!-- <div class="form-group">
+         <label>Date</label><br/>
+     </div>--> 
+    <div class="form-group">
+        <button onclick="updateEmployee(document.getElementById('employee_details_id').value,
+                        document.getElementById('employee_details_department').value,
+                        document.getElementById('employee_details_position').value,
+                        document.getElementById('employee_details_status').value, '')">Updata</button>
+    </div>
+</div>
+
+<script>
+    var t = new Canvi({
+        content: ".js-canvi-content",
+        isDebug: !1,
+        navbar: ".myCanvasNav",
+        openButton: ".js-canvi-open-button--left",
+        position: "right",
+        pushContent: !1,
+        speed: "0.2s",
+        width: "100vw",
+        responsiveWidths: [{
+                breakpoint: "600px",
+                width: "280px"
+            }, {
+                breakpoint: "1280px",
+                width: "320px"
+            }, {
+                breakpoint: "1600px",
+                width: "400px"
+            }]
+    });
+</script>

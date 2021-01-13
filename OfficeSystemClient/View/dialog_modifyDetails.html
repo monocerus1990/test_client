@@ -1,0 +1,33 @@
+<div class="modal-dialog">
+    <div class="modal-content">
+        <div class="modal-header">
+            <h4 class="modal-title">Modify Personal Information</h4>
+        </div>
+        <div class="modal-body">
+            <div class="form-group"  >
+                <label >Gender :</label>
+                <select class="form-control" id="modify_details_gender">
+                    <option value="1">Male</option>
+                    <option value="0">Female</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label >Address :</label>
+                <input class="form-control" id="modify_details_address" required autofocus/>
+            </div>
+            <div class="form-group">
+                <label >Email :</label>
+                <input  class="form-control" id="modify_details_email" required autofocus/>
+            </div>
+            <!--<div class="form-group">
+                <label >Birthday :</label>
+                <input  class="form-control" id="modify_details_birthday" required autofocus/>
+            </div>-->
+        </div>
+        <div class="modal-footer" style="padding-right: 35px">
+            <button class="btn btn-primary" onclick="modifyPersonalDetails(document.getElementById('modify_details_gender').value,
+                                        document.getElementById('modify_details_address').value,
+                                        document.getElementById('modify_details_email').value)">SAVE CHANGES</button>
+        </div>
+    </div>
+</div> 

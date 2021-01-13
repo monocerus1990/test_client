@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+        <meta name="description" content="">
+        <meta name="author" content="">
+        <link rel="icon" href="../../favicon.ico">
+
+        <title>Office System</title>
+        <!-- Bootstrap core CSS
+        <link href="../CSS/bootstrap.min.css" rel="stylesheet">  -->
+        <link href="../CSS/bootstrap-4.4.1-dist/css/bootstrap.min.css" rel="stylesheet">
+        <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+        <link href="../CSS/ie10-viewport-bug-workaround.css" rel="stylesheet">
+        <!-- Custom styles for this template -->
+        <link href="../CSS/signin.css" rel="stylesheet">
+
+
+
+        <script src="../CSS/ie-emulation-modes-warning.js"></script>
+        <script src="../JS/jquery.min.js"></script>
+        <script src="../Global/GlobalConfig.js"></script>
+        <script src="../JS/service.js"></script>
+    </head>
+
+    <body>
+        <div class="container" style="padding-top: 7%">
+            <div class="form-signin">
+                <h2 class="form-signin-heading">Login</h2>
+                <label for="inputEmail" class="sr-only">Account Name</label>
+                <input type="text" name ="username" id="inputEmail" class="form-control" placeholder="Email address" required autofocus>
+                <br>
+                <label for="inputPassword" class="sr-only">Password</label>
+                <input type="password" name ="password" id="inputPassword" class="form-control" placeholder="Password" required>                  
+                <br>
+                <input value="login" name="method" type="hidden">
+                <button class="btn btn-lg btn-primary btn-block" type="submit" 
+                        onclick="login(document.getElementById('inputEmail').value, document.getElementById('inputPassword').value)">
+                    Sign in
+                </button>
+                <div id="spinner_login" style="text-align: center;padding-top: 20px" hidden>
+                    <div class="spinner-border" role="status" style="width: 3rem; height: 3rem;">
+                        <span class="sr-only">Loading...</span>
+                    </div>
+                </div>
+            </div>
+
+
+        </div> 
+
+        <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+        <script src="../CSS/ie10-viewport-bug-workaround.js"></script>
+    </body>
+</html>

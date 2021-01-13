@@ -1,0 +1,35 @@
+<div class="modal-dialog">
+    <div class="modal-content">
+        <div class="modal-header">
+            <h4 class="modal-title">Apply for vacation</h4> <h4 style="color:red">Remaining days of vacation:<span id = "apply_vacation_remain"></span></h4>
+        </div>
+        <div class="modal-body">
+            <div class="form-group">
+                <label>Type</label>                                            
+                <select id="apply_vacation_type" class="form-control" required>
+                    <option value="1" >Leave</option>
+                    <option value="2" >Sick</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label>Form: </label>                                           
+                <input id="apply_vacation_from" type="date" class="form-control"/>
+            </div>
+            <div class="form-group">
+                <label>To: </label>                                         
+                <input id="apply_vacation_end" type="date" class="form-control"/>
+            </div>
+            <div class="form-group">
+                <label>Reason</label>
+                <br>
+                <textarea id="apply_vacation_desc" class="form-control"></textarea>
+            </div>    
+        </div>
+        <div class="modal-footer" style="padding-right: 35px">
+            <button class="btn btn-primary" onclick="applyVacation(document.getElementById('apply_vacation_from').value,
+                            document.getElementById('apply_vacation_end').value,
+                            document.getElementById('apply_vacation_type').value,
+                            document.getElementById('apply_vacation_desc').value)">&nbsp;&nbsp;APPLY&nbsp;&nbsp;</button>
+        </div>
+    </div>
+</div>

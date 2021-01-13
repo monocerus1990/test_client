@@ -1,0 +1,88 @@
+<h2  class="sub-header"  >Attendence</h2>
+<div id="toyear" class="flex flex-pack-center">
+    <div id="idCalendarPre">&lt;</div>
+    <div class="year-month">
+        <span id="idCalendarYear">2018</span>/<span id="idCalendarMonth"> </span> 
+    </div>
+    <div id="idCalendarNext">&gt;</div>
+</div>
+<div class="table-responsive">
+    <table border="1px" cellpadding="0" cellspacing="0" class="table table-striped table-hover"> 
+        <thead>
+            <tr class="tou">
+                <td>Sun</td>
+                <td>Mon</td>
+                <td>Tue</td>
+                <td>Wed</td>
+                <td>Thu</td>
+                <td>Fri</td>
+                <td>Star</td>
+            </tr>
+        </thead>
+        <tbody id="idCalendar">
+        </tbody>
+    </table>
+</div>
+
+<script>
+    var isSign = false;
+    var myday = new Array(); //已签到的数组
+    //myday[0] = "1587912125";
+    //myday[1] = "1585498098";
+
+    var employee_id = sessionStorage.getItem("employee_id");
+    //{"method":"get_attendence","data":{"employee_id":93,"from":0,"to":0}}
+    var currentDate = new Date().getTime();
+
+    var from = getNowMonth(currentDate);
+    var to = getNextMonth(currentDate);
+    myday = getAttendence(employee_id, from, to);
+    var cale = new Calendar("idCalendar", {
+        qdDay: myday,
+        onToday: function (o) {
+            o.className = "onToday";
+        },
+        onSignIn: function () {
+            $$("sign-txt").innerHTML = 'signed';
+        },
+        onFinish: function () {
+            $$("sign-count").innerHTML = myday.length //已签到次数
+            $$("idCalendarYear").innerHTML = this.Year;
+            $$("idCalendarMonth").innerHTML = this.Month; //表头年份
+
+        }
+    });
+    $$("idCalendarPre").onclick = function () {
+        myday = new Array();
+        from = getPreMonth(from);
+        to = getPreMonth(to);
+        myday = getAttendence(employee_id, from, to);
+        cale.PreMonth(myday);
+    }
+    $$("idCalendarNext").onclick = function () {
+        myday = new Array();
+        from = getNextMonth(from);
+        to = getNextMonth(to);
+        myday = getAttendence(employee_id, from, to);
+        cale.NextMonth(myday);
+
+    }
+    //添加今天签到
+    $$("signIn").onclick = function () {
+        if (isSign == false) {
+            var res = cale.SignIn();
+            if (res == '1') {
+                signAttendance(employee_id, parseInt(currentDate / 1000));
+                $$("sign-txt").innerHTML = 'You Signed';
+                $$("sign-count").innerHTML = parseInt($$("sign-count").innerHTML) + 1;
+                isSign = true;
+            } else if (res == '2') {
+                $$("sign-txt").innerHTML = 'Signed';
+                alert('Signed in today')
+            }
+        } else {
+            alert('Signed in today')
+        }
+
+    }
+</script>
