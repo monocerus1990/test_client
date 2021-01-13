@@ -1,0 +1,75 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : May 1, 2020, 6:10:28 AM
+    Author     : DELL
+*/
+
+.vacationBlock_r{
+    background-color: #FFAE32;
+    width: 450px;
+    height: 260px;
+    border:1px solid #888888;
+    border-radius:25px;
+    margin:0 auto
+
+}
+
+.vacationBlock_b{
+    background-color: #32BBFF;
+    width: 450px;
+    height: 260px;
+    border:1px solid #888888;
+    border-radius:25px;
+    margin:0 auto
+
+}
+.ReasonTd{
+    height: 100px;
+}
+
+.InputReasonTd{
+    width:500;
+    margin:0 auto;
+    height: 100px;
+
+}
+
+.button_approve {
+  background: #3498db;
+  width: 180px;
+  padding: 4px 0;
+  
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translateX(-50%) translateY(-50%);
+  border-radius: 3px;
+
+  p {
+   	font-family: 'Roboto'; 
+	  text-align: center;
+  	text-transform: uppercase;
+    color: #FFF;
+    user-select: none;
+  }
+  
+  &:hover {
+    cursor: pointer;
+  }
+  
+  &:after {
+    content: "";
+    display: block;
+    position: absolute;
+    width: 100%;
+    height: 10%;
+    border-radius: 50%;
+    background-color: darken(#f1c40f, 20%);
+    opacity: 0.4;
+    bottom: -30px;
+  }
+}

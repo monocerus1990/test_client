@@ -1,0 +1,162 @@
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="description" content="">
+        <meta name="author" content="">
+        <link rel="icon" href="../../favicon.ico">
+
+        <title>LYB Office management System</title>
+        <link href="../CSS/bootstrap.min.css" rel="stylesheet">
+        <link href="../CSS/ie10-viewport-bug-workaround.css" rel="stylesheet">   
+        <link href="../CSS/dashboard.css" rel="stylesheet">
+        <link href="../CSS/LeftMenu/form.css" rel="stylesheet">
+        <link href="../CSS/Vaction.css" rel="stylesheet">
+        <script src="../CSS/ie-emulation-modes-warning.js"></script>
+
+        <link rel="stylesheet" type="text/css" href="../CSS/LeftMenu/normalize.css" />
+        <link href="../CSS/LeftMenu/canvi.css" rel="stylesheet" type="text/css">
+        <script src=AsideMenu.js></script>
+    </head>
+    <body>
+        <aside class="myCanvasNav canvi-navbar">
+
+            <div class="table-responsive">
+                <br>
+                <br>
+                <br>
+
+
+                <div  class="vacationBlock" >
+                    <table class="table table-striped VacationTable"  >
+                        <thead>
+                            <tr>
+                                <th>Type</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+
+                            <tr>
+                                <td>From</td>
+                                <td></td>
+
+
+                                <td>To</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>Total</td>
+                                <td></td>
+                                <td>Consume</td>
+                                <td></td>
+                            </tr>
+
+                            <tr >
+                                <td class="ReasonTd">Reason</td>
+                                <td></td>
+                                <td class="ReasonTd" ></td>
+                                <td></td>
+
+
+
+                            </tr>
+                            <tr>
+                                <td rowspan="2">Status</td>
+                                <td></td>
+                                <td rowspan="2">Approval</td>
+                                <td><td>
+
+                            </tr>
+                        </tbody>
+
+                    </table>  
+                </div>
+
+
+
+            </div>
+        </aside> 
+
+        <h2 class="sub-header">All employee information</h2>
+        <main class="js-canvi-content canvi-content">  
+
+            <div class="table-responsive">
+                <table class="table table-striped" >
+                    <thead>
+                        <tr>
+                            <th>#</th>
+                            <th>Empoylee Name</th>
+                            <th>Limit</th>
+                            <th>Remaining holidays</th>
+                            <th>Unapproved quantity</th>
+                        </tr>
+                    </thead>
+                    <tbody >
+                        <tr  class="js-canvi-open-button--left0 " >
+                            <td >1,000</td>
+                            <td >Juncheng</td>
+                            <td >30</td>
+                            <td >30</td>
+                            <td >2</td>
+
+                        </tr>
+                        <tr class="js-canvi-open-button--left1">
+                            <td >1,002</td>
+                            <td>Bo</td>
+                            <td>30</td>
+                            <td>30</td>
+                            <td>1</td>
+
+                        </tr>
+
+                    </tbody>
+
+                </table>
+
+            </div>
+
+        </main>
+
+
+
+        <script>window.jQuery || document.write('<script src="../CSS/vendor/jquery.min.js"><\/script>')</script>
+        <!--    <script src="../../dist/js/bootstrap.min.js"></script>
+            <script src="../../assets/js/vendor/holder.min.js"></script>
+            <script src="../../assets/js/ie10-viewport-bug-workaround.js"></script>-->
+        <script type="text/javascript" src="../CSS/LeftMenu/canvi.js"></script>
+        <?php for ($x=0; $x<=9; $x++){?>
+
+        <script>
+            var t = new Canvi({
+                            content: ".js-canvi-content",
+                            isDebug: !1,
+                            navbar: ".myCanvasNav",
+                            openButton: ".js-canvi-open-button--left" + <?php echo $x?>,
+        position: "right",
+        pushContent: !1,
+        speed: "0.2s",
+        width: "100vw",
+        responsiveWidths: [{
+                                    breakpoint: "600px",
+                            width: "280px"
+        }, {
+                                    breakpoint: "1280px",
+                            width: "320px"
+        }, {
+                                    breakpoint: "1600px",
+                            width: "750px"
+                 }]
+        })
+        </script>
+        <?php }?>
+
+        <script src="../CSS/vendor/jquery.min.js"></script>
+        <script src="../CSS/transition.js"></script> 
+        <script src="../CSS/dropdown.js"></script>
+        <script src="../CSS/collapse.js"></script>
+
+    </body>
+</html>

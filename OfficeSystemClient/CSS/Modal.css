@@ -1,0 +1,17 @@
+.form-inline{
+    align:right;
+    margin:20px;
+}
+.form-group{
+    margin:20px;
+}
+#Name,#Email,#Address{
+    width:200px;
+    position: absolute;
+    right: 50px;
+}
+#Edit{
+    position: absolute;
+    right: 10px;
+}
+
